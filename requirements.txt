@@ -1,0 +1,15 @@
+streamlit
+requests
+boto3
+apache-airflow
+python-dotenv
+tweepy
+facebook-sdk
+google-api-python-client
+praw
+youtube-transcript-api
+transformers
+torch
+tensorflow
+tf-keras
+matplotlib
