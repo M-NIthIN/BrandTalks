@@ -60,8 +60,8 @@ def fetch_youtube_videos(brand_name, max_results=15):
         
         try:
             transcript_data = YouTubeTranscriptApi.get_transcript(video_id)
-            transcript_text = " ".join([entry['text'] for entry in transcript_data])
-            video_data["transcript"] = transcript_text
+            #transcript_text = " ".join([entry['text'] for entry in transcript_data])
+            video_data["transcript"] = transcript_data
         except Exception as e:
             video_data["transcript"] = f"Error: Could not retrieve transcript. Reason: {str(e)}"
 
