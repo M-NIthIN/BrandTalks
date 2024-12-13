@@ -1,4 +1,3 @@
- 
 import praw
 import sys
 import os
@@ -15,7 +14,7 @@ reddit = praw.Reddit(
 )
 
 
-def fetch_reddit_posts(brand_name, limit=1):
+def fetch_reddit_posts(brand_name, limit=10):
     posts = []
     for submission in reddit.subreddit("all").search(brand_name, limit=limit):
         post = {
@@ -52,3 +51,5 @@ if __name__ == "__main__":
     sys.stdout.reconfigure(encoding='utf-8')
     print(json.dumps(post, ensure_ascii=False,indent=4))
     #save_reddit_data_to_s3("Tesla")
+    with open("redit_sample.json", "w", encoding="utf-8") as outfile:
+        json.dump(post, outfile, ensure_ascii=False, indent=4)
